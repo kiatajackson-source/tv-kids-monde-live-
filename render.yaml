@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: tv-kids-monde-live
+    runtime: python
+    buildCommand: pip install -r
+
+
+main -> main
+pip install -r requirements.txt
+gunicorn server.app:app --bind 0.0.0.0:$PORT
+cd ~/tv-kids-monde-live
+
+cat > render.yaml <<'YAML'
+services:
+  - type: web
+    name: tv-kids-monde-live
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server.app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /health
