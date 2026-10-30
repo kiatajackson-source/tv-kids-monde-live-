@@ -18,4 +18,4 @@ Les vidéos seront diffusées uniquement lorsque leur retransmission est autoris
 ## Projet
 
 Application Android compilée à distance avec GitHub Actions.cd ~/tv-kids-monde-live
-git status
+git status.
